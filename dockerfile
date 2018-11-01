@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     #rm /etc/nginx/sites-enabled/default && \
     #cp /code/nginx/app /etc/nginx/sites-available/ && \
     #ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/ && \
-    pip install -r /code/requirements.txt && \
+    pip install -r /requirements.txt && \
     
 
 EXPOSE 88
-CMD ["supervisord", "-c", "/etc/supervisord.conf"]
+#CMD ["supervisord", "-c", "/etc/supervisord.conf"]
