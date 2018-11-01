@@ -1,10 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
- name: imageclassificationc
+ name: emailclassificationapp
 spec:
  containers:
    - name: model-api
-     image: $ACR_DNS/model-api:$(Build.BuildId)
+     image: crrq51278013.azurecr.io/model-api:106
      ports:
        - containerPort: 88
+ imagePullSecrets:
+   - name: emailclassificationappdemosecret
