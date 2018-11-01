@@ -9,4 +9,4 @@ spec:
      ports:
        - containerPort: 88
  imagePullSecrets:
-   - name: emailclassificationappdemosecret
+   - name: imageclassificationappdemosecret
