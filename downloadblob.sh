@@ -22,7 +22,7 @@ echo "Azure File Name 1" $blob_name1
 
 echo "Starting download of model file : " $blob_name1
 
-az storage blob download --container-name $container_name --name $blob_name1 --file flaskwebapp/$blob_name1 --output table
+az storage blob download --container-name $container_name --name $blob_name1 --file /$blob_name1 --output table
 az storage blob list --container-name $container_name --output table
 
 echo "Download of model file complete : " $blob_name1
