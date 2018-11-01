@@ -15,9 +15,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python-pip \
         supervisor \
         nginx && \
-    rm /etc/nginx/sites-enabled/default && \
-    cp /code/nginx/app /etc/nginx/sites-available/ && \
-    ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/ && \
+    #rm /etc/nginx/sites-enabled/default && \
+    #cp /code/nginx/app /etc/nginx/sites-available/ && \
+    #ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/ && \
     pip install -r /code/requirements.txt && \
     
 
