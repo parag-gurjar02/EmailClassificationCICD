@@ -1,12 +1,31 @@
+apiVersion: apps/v1beta1
+kind: Deployment 
+metadata: 
+  name: emailclassificationapp 
+spec: 
+  selector: 
+    matchLabels: 
+      app: emailclassificationapp 
+  replicas: 1 # tells deployment to run 2 pods matching the template 
+  template:
+    metadata: 
+      labels: 
+        app: emailclassificationapp 
+    spec: 
+      containers: 
+      - name: model-api 
+        image: crrq51278013.azurecr.io/model-api:205
+        ports: 
+        - containerPort: 89
+---
 apiVersion: v1
-kind: Pod
-metadata:
- name: emailclassificationapp
-spec:
- containers:
-   - name: model-api
-     image: crrq51278013.azurecr.io/model-api:119
-     ports:
-       - containerPort: 88
- imagePullSecrets:
-   - name: imageclassificationappdemosecret
+kind: Service	
+metadata:	
+  name: emailclassificationapp	
+spec:	
+  type: LoadBalancer	
+  ports:	
+  - port: 86
+    targetPort: 89	
+  selector:	
+    app: emailclassificationapp
